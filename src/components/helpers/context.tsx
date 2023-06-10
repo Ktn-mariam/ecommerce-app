@@ -5,6 +5,8 @@ const ProductListContext = createContext<ProductListType>({
   categories: [],
   currentCategory: 'All',
   setCurrentCategory: () => {},
+  setSearchProduct: () => {},
+  searchProduct: null,
 })
 
 export interface ProductListType {
@@ -12,6 +14,8 @@ export interface ProductListType {
   categories: string[]
   currentCategory: string
   setCurrentCategory: React.Dispatch<React.SetStateAction<string>>
+  setSearchProduct: React.Dispatch<React.SetStateAction<string | null>>
+  searchProduct: string | null
 }
 
 export interface ProductType {
@@ -31,7 +35,7 @@ export const ProductListContextProvider = ({ children }: Props) => {
   const [productList, setProductList] = useState<ProductType[]>([])
   const [categories, setCategories] = useState<string[]>([])
   const [currentCategory, setCurrentCategory] = useState<string>('All')
-
+  const [searchProduct, setSearchProduct] = useState<string | null>(null)
   useEffect(() => {
     const fetchProductLists = async () => {
       try {
@@ -67,6 +71,8 @@ export const ProductListContextProvider = ({ children }: Props) => {
     categories,
     currentCategory,
     setCurrentCategory,
+    searchProduct,
+    setSearchProduct,
   }
 
   return (

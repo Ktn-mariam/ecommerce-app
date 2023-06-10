@@ -1,10 +1,12 @@
-import React, { useContext } from 'react'
-import ProductListContext, { ProductType } from './helpers/context'
-import { Grid, GridItem } from '@chakra-ui/react'
+import { useContext } from 'react'
+import ProductListContext from './helpers/context'
+import { Grid } from '@chakra-ui/react'
 import Product from './Product'
 
 function ProductList() {
-  const { productList, currentCategory } = useContext(ProductListContext)
+  const { productList, currentCategory, searchProduct } = useContext(
+    ProductListContext,
+  )
   return (
     <div>
       <Grid
@@ -22,6 +24,15 @@ function ProductList() {
               return product
             } else {
               return product.category === currentCategory
+            }
+          })
+          .filter((product) => {
+            if (searchProduct !== null) {
+              return product.title
+                .toLowerCase()
+                .includes(searchProduct.toLowerCase())
+            } else {
+              return product
             }
           })
           .map((product) => {

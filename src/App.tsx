@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './components/NavBar'
+import SearchBar from './components/SearchBar'
 import { ChakraProvider } from '@chakra-ui/react'
 import { ProductListContextProvider } from './components/helpers/context'
 import ProductList from './components/ProductList'
@@ -13,7 +13,7 @@ function App() {
           <Flex>
             <Categories />
             <Flex direction="column" flexGrow="1">
-              <NavBar />
+              <SearchBar />
               <ProductList />
             </Flex>
           </Flex>
