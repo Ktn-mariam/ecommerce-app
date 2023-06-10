@@ -7,7 +7,15 @@ function ProductList() {
   const { productList, currentCategory } = useContext(ProductListContext)
   return (
     <div>
-      <Grid templateColumns="repeat(3, 1fr)" rowGap={'5px'} columnGap={'2px'}>
+      <Grid
+        templateColumns={{
+          base: 'repeat(1, 1fr)',
+          sm: 'repeat(2, 1fr)',
+          md: 'repeat(3, 1fr)',
+        }}
+        rowGap={'5px'}
+        columnGap={'2px'}
+      >
         {productList
           .filter((product) => {
             if (currentCategory === 'All') {

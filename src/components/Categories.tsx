@@ -34,6 +34,14 @@ function Categories() {
   const { categories } = useContext(ProductListContext)
   return (
     <Box width="200px">
+      <Text
+        fontSize="20px"
+        fontWeight="extrabold"
+        fontFamily="Merriweather"
+        flexGrow="1"
+      >
+        Categories
+      </Text>
       <Category category="All" />
       {categories.map((category) => {
         return <Category category={category} />

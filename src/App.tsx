@@ -12,7 +12,7 @@ function App() {
         <div className="App">
           <Flex>
             <Categories />
-            <Flex direction="column">
+            <Flex direction="column" flexGrow="1">
               <NavBar />
               <ProductList />
             </Flex>
