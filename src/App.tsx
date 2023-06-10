@@ -3,15 +3,21 @@ import { ProductListContextProvider } from './components/helpers/context'
 import Header from './components/Header'
 import ProductsPage from './pages/ProductsPage'
 import ProductDetail from './pages/ProductDetail'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
 function App() {
   return (
     <ChakraProvider>
       <ProductListContextProvider>
-        <div className="App">
-          <Header />
-          {/* <ProductsPage /> */}
-          <ProductDetail />
-        </div>
+        <Router>
+          <div className="App">
+            <Header />
+            <Routes>
+              <Route path="/" element={<ProductsPage />}></Route>
+              <Route path="/:id" element={<ProductDetail />}></Route>
+            </Routes>
+          </div>
+        </Router>
       </ProductListContextProvider>
     </ChakraProvider>
   )

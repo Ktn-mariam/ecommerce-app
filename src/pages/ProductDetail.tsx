@@ -5,9 +5,17 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Button } from '@chakra-ui/react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import { useParams } from 'react-router-dom'
 
 function ProductDetail() {
-  const { productList } = useContext(ProductListContext)
+  const { productList, setCurrentCategory } = useContext(ProductListContext)
+  const { id } = useParams()
+  const parsedProductId = id ? parseInt(id) : undefined
+  const product = productList.find((product) => {
+    return parsedProductId !== undefined && product.id === parsedProductId
+  })
+  console.log(product)
+
   return (
     <Flex direction="column">
       <Box>
@@ -17,17 +25,23 @@ function ProductDetail() {
           separator={<ChevronRightIcon color="gray.500" />}
         >
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            <BreadcrumbLink href="/">Home</BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem>
-            <BreadcrumbLink textTransform="capitalize" href="#">
-              {productList[0].category}
+            <BreadcrumbLink
+              textTransform="capitalize"
+              href="/"
+              onClick={() => {
+                setCurrentCategory(product?.category || 'All')
+              }}
+            >
+              {product?.category}
             </BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href="#">{productList[0].title}</BreadcrumbLink>
+            <BreadcrumbLink href="#">{product?.title}</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
       </Box>
@@ -36,7 +50,7 @@ function ProductDetail() {
         direction="row"
       >
         <Box>
-          <Image src={productList[0].image} height="500px" />
+          <Image src={product?.image} height="500px" />
         </Box>
         <Box pl="60px">
           <Text
@@ -45,10 +59,10 @@ function ProductDetail() {
             fontWeight="extrabold"
             pt="10px"
           >
-            {productList[0].title}
+            {product?.title}
           </Text>
           <Text textTransform="capitalize" fontFamily="Merriweather">
-            {productList[0].category}
+            {product?.category}
           </Text>
           <Text
             fontFamily="Merriweather"
@@ -56,7 +70,7 @@ function ProductDetail() {
             color="#F86338"
             pt="20px"
           >
-            ${productList[0].price}
+            ${product?.price}
           </Text>
           <Text
             fontFamily="Merriweather"
@@ -66,7 +80,7 @@ function ProductDetail() {
           >
             Description
           </Text>
-          <Text>{productList[0].description}</Text>
+          <Text>{product?.description}</Text>
           <Button rightIcon={<ShoppingCartIcon />} colorScheme="#F86338">
             Add to Cart
           </Button>
