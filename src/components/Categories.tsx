@@ -12,6 +12,7 @@ const Category: React.FC<CategoryProps> = ({ category }) => {
   return (
     <HStack
       direction="row"
+      p="5px 5px"
       justifyContent="space-between"
       onClick={() => {
         setCurrentCategory(category)
@@ -39,6 +40,7 @@ function Categories() {
         fontWeight="extrabold"
         fontFamily="Merriweather"
         flexGrow="1"
+        pb="10px"
       >
         Categories
       </Text>
