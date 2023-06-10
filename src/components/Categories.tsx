@@ -1,40 +1,39 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { HStack, Text } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import ProductListContext from './helpers/context'
 
 interface CategoryProps {
   category: string
 }
 
 const Category: React.FC<CategoryProps> = ({ category }) => {
+  const { currentCategory, setCurrentCategory } = useContext(ProductListContext)
   return (
-    <HStack direction="row" justifyContent="space-between">
-      <Text textTransform="capitalize">{category}</Text>
+    <HStack
+      direction="row"
+      justifyContent="space-between"
+      onClick={() => {
+        setCurrentCategory(category)
+      }}
+    >
+      <Text
+        textTransform="capitalize"
+        color={currentCategory === category ? 'grey.500' : 'grey.900'}
+        fontWeight={currentCategory === category ? 'bold' : 'normal'}
+      >
+        {category}
+      </Text>
       <ChevronRightIcon />
     </HStack>
   )
 }
 
 function Categories() {
-  const [categories, setCategories] = useState<string[]>([])
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const response = await fetch(
-          'https://fakestoreapi.com/products/categories',
-        )
-        const json = await response.json()
-        setCategories(json)
-      } catch (error) {
-        console.log('Error fetching items:', error)
-      }
-    }
-    fetchCategories()
-  }, [categories])
-
+  const { categories } = useContext(ProductListContext)
   return (
     <div>
+      <Category category="All" />
       {categories.map((category) => {
         return <Category category={category} />
       })}
