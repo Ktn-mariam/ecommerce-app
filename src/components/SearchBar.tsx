@@ -6,7 +6,7 @@ import ProductListContext from './helpers/context'
 const SearchBar = () => {
   const { setSearchProduct } = useContext(ProductListContext)
   return (
-    <Box p="10px" pt="0px" pb="30px">
+    <Box p="10px" pt="0px">
       <InputGroup>
         <InputLeftElement
           pointerEvents="none"

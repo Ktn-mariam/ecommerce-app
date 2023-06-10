@@ -16,7 +16,7 @@ function Header() {
         justifyContent="space-around"
         flexDirection={{ md: 'row', sm: 'column' }}
       >
-        <Flex>
+        <Flex align="center">
           <PhoneIcon />
           +022 319 821 967
         </Flex>
@@ -37,8 +37,8 @@ function Header() {
         </Wrap>
       </Flex>
       <Flex
-        pr="80px"
-        pl="80px"
+        pr="100px"
+        pl="100px"
         alignItems="center"
         justifyContent="space-between"
       >
