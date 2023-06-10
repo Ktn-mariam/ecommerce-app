@@ -11,10 +11,10 @@ function Header() {
   return (
     <Box>
       <Flex
-        p={{ md: '20px 20px 10px 20px', sm: '10px 10px 5px 10px' }}
+        p={{ md: '20px 100px 10px 100px', sm: '10px 20px 5px 20px' }}
         alignItems="center"
-        justifyContent="space-around"
-        flexDirection={{ md: 'row', sm: 'column' }}
+        justifyContent="space-between"
+        flexDirection={'row'}
       >
         <Flex align="center">
           <PhoneIcon />
@@ -23,22 +23,38 @@ function Header() {
         <Logo />
         <Wrap>
           <WrapItem>
-            <Avatar size="sm" backgroundColor="#F86338" name="Face book" />
+            <Avatar
+              size={{ md: 'sm', base: 'xs' }}
+              backgroundColor="#F86338"
+              name="Face book"
+            />
           </WrapItem>
           <WrapItem>
-            <Avatar size="sm" backgroundColor="#F86338" name="T witter" />
+            <Avatar
+              size={{ md: 'sm', base: 'xs' }}
+              backgroundColor="#F86338"
+              name="T witter"
+            />
           </WrapItem>
           <WrapItem>
-            <Avatar size="sm" backgroundColor="#F86338" name="Insta gram" />
+            <Avatar
+              size={{ md: 'sm', base: 'xs' }}
+              backgroundColor="#F86338"
+              name="Insta gram"
+            />
           </WrapItem>
           <WrapItem>
-            <Avatar size="sm" backgroundColor="#F86338" name="You tube" />
+            <Avatar
+              size={{ md: 'sm', base: 'xs' }}
+              backgroundColor="#F86338"
+              name="You tube"
+            />
           </WrapItem>
         </Wrap>
       </Flex>
       <Flex
-        pr="100px"
-        pl="100px"
+        pr={{ md: '100px', base: '20px' }}
+        pl={{ md: '100px', base: '20px' }}
         alignItems="center"
         justifyContent="space-between"
       >

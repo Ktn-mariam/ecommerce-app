@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import ProductListContext from './helpers/context'
-import { Grid } from '@chakra-ui/react'
+import { Box, Grid } from '@chakra-ui/react'
 import Product from './Product'
 
 interface ProductListProps {
@@ -48,7 +48,7 @@ const ProductList: React.FC<ProductListProps> = ({ sortBy }) => {
     return sortedProducts
   }
   return (
-    <div>
+    <Box>
       <Grid
         templateColumns={{
           base: 'repeat(1, 1fr)',
@@ -62,7 +62,7 @@ const ProductList: React.FC<ProductListProps> = ({ sortBy }) => {
           return <Product product={product} />
         })}
       </Grid>
-    </div>
+    </Box>
   )
 }
 

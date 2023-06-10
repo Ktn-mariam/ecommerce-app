@@ -35,7 +35,7 @@ const SortFilter: React.FC<SortFilterProps> = ({ setSortBy }) => {
           <option value="price">Price</option>
         </select>
       </Flex>
-      <Flex>
+      <Flex pr="5px">
         <Box pr="15px">
           <ListIcon />
         </Box>

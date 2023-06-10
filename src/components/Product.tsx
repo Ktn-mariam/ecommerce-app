@@ -9,20 +9,24 @@ const Product: React.FC<ProductProps> = ({ product }) => {
   return (
     <div>
       <VStack
-        width="200px"
+        width={{ md: '200px', sm: '150px' }}
         borderRadius="lg"
         overflow="hidden"
         textAlign="center"
         fontFamily="Merriweather"
       >
-        <Image src={product.image} alt="Product Image" height="200px" />
+        <Image
+          src={product.image}
+          alt="Product Image"
+          height={{ md: '200px', sm: '150px' }}
+        />
         <Box color="#F3692E" fontSize="10px" textTransform={'capitalize'}>
           {product.category}
         </Box>
-        <Box color="#11142D" fontSize="20px">
+        <Box color="#11142D" fontSize={{ md: '20px', sm: '17px' }}>
           {product.title}
         </Box>
-        <Box fontSize="20px" color="#F3692E">
+        <Box fontSize={{ md: '20px', sm: '17px' }} color="#F3692E">
           ${product.price}
         </Box>
       </VStack>

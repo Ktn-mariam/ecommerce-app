@@ -14,7 +14,7 @@ function App() {
       <ProductListContextProvider>
         <div className="App">
           <Header />
-          <Flex p="30px 100px 0px 100px">
+          <Flex p={{ md: '30px 100px 0px 100px', sm: '10px 10px 0px 10px' }}>
             <Categories />
             <Flex pl="10px" direction="column" flexGrow="1">
               <SearchBar />
