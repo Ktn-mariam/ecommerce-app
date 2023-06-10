@@ -48,15 +48,20 @@ function ProductDetail() {
       </Box>
       <Flex
         p={{ md: '30px 200px 0px 200px', sm: '10px 10px 0px 10px' }}
-        direction="row"
+        direction={{ md: 'row', sm: 'column' }}
+        alignItems={{ md: '-moz-initial', sm: 'center' }}
       >
         <Box>
-          <Image src={product?.image} height="500px" minW="300px" />
+          <Image
+            src={product?.image}
+            height={{ md: '500px', base: '250px' }}
+            minW={{ md: '300px', base: '0px' }}
+          />
         </Box>
-        <Box pl="60px">
+        <Box pl={{ md: '60px', base: '0px' }}>
           <Text
             fontFamily="Merriweather"
-            fontSize="35px"
+            fontSize={{ md: '35px', base: '25px' }}
             fontWeight="extrabold"
             pt="10px"
           >
