@@ -1,9 +1,8 @@
-import { Box, Flex, Text, Image } from '@chakra-ui/react'
+import { Box, Flex, Text, Image, Button } from '@chakra-ui/react'
 import { useContext } from 'react'
 import ProductListContext from '../components/helpers/context'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { Button } from '@chakra-ui/react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { useParams } from 'react-router-dom'
 
@@ -33,7 +32,9 @@ function ProductDetail() {
               textTransform="capitalize"
               href="/"
               onClick={() => {
-                setCurrentCategory(product?.category || 'All')
+                setCurrentCategory(
+                  product?.category ? product?.category : 'All',
+                )
               }}
             >
               {product?.category}
@@ -50,7 +51,7 @@ function ProductDetail() {
         direction="row"
       >
         <Box>
-          <Image src={product?.image} height="500px" />
+          <Image src={product?.image} height="500px" minW="300px" />
         </Box>
         <Box pl="60px">
           <Text
@@ -81,9 +82,16 @@ function ProductDetail() {
             Description
           </Text>
           <Text>{product?.description}</Text>
-          <Button rightIcon={<ShoppingCartIcon />} colorScheme="#F86338">
-            Add to Cart
-          </Button>
+          <Box pt="20px">
+            <Button
+              color="#fff"
+              rightIcon={<ShoppingCartIcon />}
+              backgroundColor="#F86338"
+            >
+              Add to Cart
+            </Button>
+            {/* <Button colorScheme="blue">Button</Button> */}
+          </Box>
         </Box>
       </Flex>
     </Flex>
