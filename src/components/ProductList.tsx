@@ -4,13 +4,21 @@ import { Grid, GridItem } from '@chakra-ui/react'
 import Product from './Product'
 
 function ProductList() {
-  const { productList } = useContext(ProductListContext)
+  const { productList, currentCategory } = useContext(ProductListContext)
   return (
     <div>
       <Grid templateColumns="repeat(3, 1fr)" rowGap={'5px'} columnGap={'2px'}>
-        {productList.map((product) => {
-          return <Product product={product} />
-        })}
+        {productList
+          .filter((product) => {
+            if (currentCategory === 'All') {
+              return product
+            } else {
+              return product.category === currentCategory
+            }
+          })
+          .map((product) => {
+            return <Product product={product} />
+          })}
       </Grid>
     </div>
   )

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { HStack, Text } from '@chakra-ui/react'
+import { Box, HStack, Text } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import ProductListContext from './helpers/context'
 
@@ -16,11 +16,12 @@ const Category: React.FC<CategoryProps> = ({ category }) => {
       onClick={() => {
         setCurrentCategory(category)
       }}
+      _hover={{ cursor: 'pointer' }}
     >
       <Text
         textTransform="capitalize"
         color={currentCategory === category ? 'grey.500' : 'grey.900'}
-        fontWeight={currentCategory === category ? 'bold' : 'normal'}
+        fontWeight={currentCategory === category ? 'bold' : 'medium'}
       >
         {category}
       </Text>
@@ -32,12 +33,12 @@ const Category: React.FC<CategoryProps> = ({ category }) => {
 function Categories() {
   const { categories } = useContext(ProductListContext)
   return (
-    <div>
+    <Box width="200px">
       <Category category="All" />
       {categories.map((category) => {
         return <Category category={category} />
       })}
-    </div>
+    </Box>
   )
 }
 
