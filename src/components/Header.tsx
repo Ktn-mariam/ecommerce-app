@@ -11,7 +11,11 @@ function Header() {
   return (
     <Box>
       <Flex
-        p={{ md: '20px 100px 10px 100px', base: '5px 10px 5px 10px' }}
+        p={{
+          lg: '20px 100px 10px 100px',
+          md: '20px 50px 10px 50px',
+          base: '5px 10px 5px 10px',
+        }}
         alignItems="center"
         justifyContent={{ md: 'space-between', base: 'center', sm: 'center' }}
         flexDirection="row"
@@ -56,8 +60,8 @@ function Header() {
         </Wrap>
       </Flex>
       <Flex
-        pr={{ md: '100px', base: '20px' }}
-        pl={{ md: '100px', base: '20px' }}
+        pr={{ lg: '100px', md: '50px', base: '20px' }}
+        pl={{ lg: '100px', md: '50px', base: '20px' }}
         alignItems="center"
         justifyContent="space-between"
         direction="row"

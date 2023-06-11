@@ -10,7 +10,13 @@ function ProductsPage() {
   const [sortBy, setSortBy] = useState<string | null>(null)
   return (
     <Box>
-      <Flex p={{ md: '30px 100px 0px 100px', base: '30px 10px 0px 10px' }}>
+      <Flex
+        p={{
+          lg: '30px 100px 0px 100px',
+          md: '30px 50px 0px 50px',
+          base: '30px 10px 0px 10px',
+        }}
+      >
         <Categories />
         <Flex pl="10px" direction="column" flexGrow="1">
           <SearchBar />
