@@ -60,22 +60,22 @@ function Header() {
         pl={{ md: '100px', base: '20px' }}
         alignItems="center"
         justifyContent="space-between"
-        direction={{ md: 'row', base: 'column-reverse' }}
+        direction="row"
       >
         <Flex>
-          <Text pr="20px">Home</Text>
-          <Text pr="20px">About</Text>
-          <Text pr="20px">FAQ</Text>
-          <Text pr="20px">Blog</Text>
+          <Text pr={{ md: '20px', base: '10px' }}>Home</Text>
+          <Text pr={{ md: '20px', base: '10px' }}>About</Text>
+          <Text pr={{ md: '20px', base: '10px' }}>FAQ</Text>
+          <Text pr={{ md: '20px', base: '10px' }}>Blog</Text>
         </Flex>
         <Flex>
-          <Box pr="20px">
+          <Box pr={{ md: '20px', base: '10px' }}>
             <FavoriteIcon />
           </Box>
-          <Box pr="20px">
+          <Box pr={{ md: '20px', base: '10px' }}>
             <ShoppingCartIcon />
           </Box>
-          <Box pr="20px">
+          <Box pr={{ md: '20px', base: '10px' }}>
             <PersonIcon />
           </Box>
         </Flex>

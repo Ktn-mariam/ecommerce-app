@@ -10,7 +10,7 @@ interface SortFilterProps {
 const SortFilter: React.FC<SortFilterProps> = ({ setSortBy }) => {
   return (
     <Flex
-      direction="row"
+      direction={{ md: 'row' }}
       alignItems="center"
       justifyContent="space-between"
       pb="30px"
