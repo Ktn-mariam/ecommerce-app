@@ -11,7 +11,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
     <div key={product.id}>
       <Link to={`/${product.id}`}>
         <VStack
-          width={{ md: '200px', sm: '150px' }}
+          width={{ md: '200px', base: '150px' }}
           borderRadius="lg"
           overflow="hidden"
           textAlign="center"
@@ -20,15 +20,15 @@ const Product: React.FC<ProductProps> = ({ product }) => {
           <Image
             src={product.image}
             alt="Product Image"
-            height={{ md: '200px', sm: '150px' }}
+            height={{ md: '200px', base: '150px' }}
           />
           <Box color="#F3692E" fontSize="10px" textTransform={'capitalize'}>
             {product.category}
           </Box>
-          <Box color="#11142D" fontSize={{ md: '20px', sm: '17px' }}>
+          <Box color="#11142D" fontSize={{ md: '20px', base: '17px' }}>
             {product.title}
           </Box>
-          <Box fontSize={{ md: '20px', sm: '17px' }} color="#F3692E">
+          <Box fontSize={{ md: '20px', base: '17px' }} color="#F3692E">
             ${product.price}
           </Box>
         </VStack>

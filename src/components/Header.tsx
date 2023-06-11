@@ -11,7 +11,7 @@ function Header() {
   return (
     <Box>
       <Flex
-        p={{ md: '20px 100px 10px 100px', sm: '10px 20px 5px 20px' }}
+        p={{ md: '20px 100px 10px 100px', base: '10px 20px 5px 20px' }}
         alignItems="center"
         justifyContent="space-between"
         flexDirection={'row'}

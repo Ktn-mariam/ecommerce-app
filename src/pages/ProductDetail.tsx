@@ -19,7 +19,7 @@ function ProductDetail() {
     <Flex direction="column">
       <Box>
         <Breadcrumb
-          p={{ md: '30px 100px 0px 100px', sm: '10px 10px 0px 10px' }}
+          p={{ md: '30px 100px 0px 100px', base: '10px 10px 0px 10px' }}
           spacing="8px"
           separator={<ChevronRightIcon color="gray.500" />}
         >
@@ -47,9 +47,9 @@ function ProductDetail() {
         </Breadcrumb>
       </Box>
       <Flex
-        p={{ md: '30px 200px 0px 200px', sm: '10px 10px 0px 10px' }}
-        direction={{ md: 'row', sm: 'column' }}
-        alignItems={{ md: '-moz-initial', sm: 'center' }}
+        p={{ md: '30px 200px 0px 200px', base: '10px 10px 0px 10px' }}
+        direction={{ md: 'row', base: 'column' }}
+        alignItems={{ md: '-moz-initial', base: 'center' }}
       >
         <Box>
           <Image
