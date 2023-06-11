@@ -32,28 +32,32 @@ function Header() {
           <WrapItem>
             <Avatar
               size={{ md: 'sm', base: 'xs' }}
-              backgroundColor="#F86338"
+              backgroundColor="#fff"
+              border="1px solid black"
               name="Face book"
             />
           </WrapItem>
           <WrapItem>
             <Avatar
               size={{ md: 'sm', base: 'xs' }}
-              backgroundColor="#F86338"
+              backgroundColor="#fff"
+              border="1px solid black"
               name="T witter"
             />
           </WrapItem>
           <WrapItem>
             <Avatar
               size={{ md: 'sm', base: 'xs' }}
-              backgroundColor="#F86338"
+              backgroundColor="#fff"
+              border="1px solid black"
               name="Insta gram"
             />
           </WrapItem>
           <WrapItem>
             <Avatar
               size={{ md: 'sm', base: 'xs' }}
-              backgroundColor="#F86338"
+              backgroundColor="#fff"
+              border="1px solid black"
               name="You tube"
             />
           </WrapItem>

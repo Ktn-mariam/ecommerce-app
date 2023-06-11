@@ -10,7 +10,7 @@ function Footer() {
     <Grid
       backgroundColor="#F86338"
       color="#fff"
-      p={{ md: '100px 80px', base: '60px 40px' }}
+      p={{ md: '80px 80px', base: '60px 40px' }}
       mt="40px"
       fontSize="13px"
       templateColumns={{ md: 'repeat(4, 1fr)', base: 'repeat(1, 1fr)' }}
