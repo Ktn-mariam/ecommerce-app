@@ -59,6 +59,7 @@ const ProductList: React.FC<ProductListProps> = ({ sortBy }) => {
         rowGap={'5px'}
         columnGap={'2px'}
         pl={{ lg: '20px' }}
+        mb={{ md: '80px', base: '50px' }}
       >
         {getProducts().map((product) => {
           return <Product product={product} />

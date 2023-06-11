@@ -27,7 +27,7 @@ function Header() {
           <PhoneIcon />
           +022 319 821 967
         </Flex>
-        <Logo />
+        <Logo colour="black" />
         <Wrap display={{ md: 'inline', base: 'none', sm: 'none' }}>
           <WrapItem>
             <Avatar
