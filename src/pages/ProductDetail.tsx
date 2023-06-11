@@ -48,17 +48,19 @@ function ProductDetail() {
         </Breadcrumb>
       </Box>
       <Flex
-        p={{ md: '30px 200px 0px 200px', base: '10px 30px 50px 30px' }}
-        direction={{ md: 'row', base: 'column' }}
+        p={{
+          lg: '30px 200px 80px 200px',
+          md: '30px 100px 80px 100px',
+          base: '10px 30px 50px 30px',
+        }}
+        direction={{ lg: 'row', md: 'column', base: 'column' }}
         alignItems={{ md: '-moz-initial', base: 'center' }}
       >
-        <Box>
-          <Image
-            src={product?.image}
-            height={{ md: '500px', base: '250px' }}
-            minW={{ md: '300px', base: '0px' }}
-          />
-        </Box>
+        <Image
+          src={product?.image}
+          height={{ md: '400px', base: '200px' }}
+          minW={{ md: '300px', base: '0px' }}
+        />
         <Box pl={{ md: '60px', base: '0px' }}>
           <Text
             fontFamily="Merriweather"
