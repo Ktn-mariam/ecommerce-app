@@ -5,9 +5,10 @@ import Product from './Product'
 
 interface ProductListProps {
   sortBy: string | null
+  filter: Record<string, number>
 }
 
-const ProductList: React.FC<ProductListProps> = ({ sortBy }) => {
+const ProductList: React.FC<ProductListProps> = ({ sortBy, filter }) => {
   const { productList, currentCategory, searchProduct } = useContext(
     ProductListContext,
   )
@@ -29,6 +30,9 @@ const ProductList: React.FC<ProductListProps> = ({ sortBy }) => {
         } else {
           return product
         }
+      })
+      .filter((product) => {
+        return product.price >= filter.min && product.price <= filter.max
       })
 
     let sortedProducts = []

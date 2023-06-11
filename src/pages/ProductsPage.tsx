@@ -5,9 +5,14 @@ import ProductList from '../components/ProductList'
 import Categories from '../components/Categories'
 import { Flex } from '@chakra-ui/react'
 import SortFilter from '../components/SortFilter'
+import FilterRange from '../components/FilterRange'
 
 function ProductsPage() {
   const [sortBy, setSortBy] = useState<string | null>(null)
+  const [filter, setFilter] = useState<Record<string, number>>({
+    min: 0,
+    max: 1000,
+  })
   return (
     <Box>
       <Flex
@@ -17,11 +22,14 @@ function ProductsPage() {
           base: '30px 10px 0px 10px',
         }}
       >
-        <Categories />
+        <Flex direction="column">
+          <FilterRange filter={filter} setFilter={setFilter} />
+          <Categories />
+        </Flex>
         <Flex pl="10px" direction="column" flexGrow="1">
           <SearchBar />
           <SortFilter setSortBy={setSortBy} />
-          <ProductList sortBy={sortBy} />
+          <ProductList sortBy={sortBy} filter={filter} />
         </Flex>
       </Flex>
     </Box>
