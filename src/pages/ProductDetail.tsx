@@ -59,7 +59,7 @@ function ProductDetail() {
         <Image
           src={product?.image}
           height={{ md: '400px', base: '200px' }}
-          minW={{ md: '300px', base: '0px' }}
+          maxW={{ md: '400px' }}
         />
         <Box pl={{ md: '60px', base: '0px' }}>
           <Text
