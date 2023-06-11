@@ -19,9 +19,10 @@ function ProductDetail() {
     <Flex direction="column">
       <Box>
         <Breadcrumb
-          p={{ md: '30px 100px 0px 100px', base: '10px 10px 0px 10px' }}
+          p={{ md: '30px 100px 5px 100px', base: '20px 30px 10px 30px' }}
           spacing="8px"
           separator={<ChevronRightIcon color="gray.500" />}
+          fontSize={{ md: '18px', base: '15px' }}
         >
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -47,7 +48,7 @@ function ProductDetail() {
         </Breadcrumb>
       </Box>
       <Flex
-        p={{ md: '30px 200px 0px 200px', base: '10px 10px 0px 10px' }}
+        p={{ md: '30px 200px 0px 200px', base: '10px 30px 50px 30px' }}
         direction={{ md: 'row', base: 'column' }}
         alignItems={{ md: '-moz-initial', base: 'center' }}
       >
@@ -92,6 +93,7 @@ function ProductDetail() {
               color="#fff"
               rightIcon={<ShoppingCartIcon />}
               backgroundColor="#F86338"
+              _hover={{ backgroundColor: '#e65b34' }}
             >
               Add to Cart
             </Button>

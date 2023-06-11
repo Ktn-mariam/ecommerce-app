@@ -11,17 +11,20 @@ function Header() {
   return (
     <Box>
       <Flex
-        p={{ md: '20px 100px 10px 100px', base: '10px 20px 5px 20px' }}
+        p={{ md: '20px 100px 10px 100px', base: '5px 10px 5px 10px' }}
         alignItems="center"
-        justifyContent="space-between"
-        flexDirection={'row'}
+        justifyContent={{ md: 'space-between', base: 'center', sm: 'center' }}
+        flexDirection="row"
       >
-        <Flex align="center">
+        <Flex
+          align="center"
+          display={{ md: 'inline', base: 'none', sm: 'none' }}
+        >
           <PhoneIcon />
           +022 319 821 967
         </Flex>
         <Logo />
-        <Wrap>
+        <Wrap display={{ md: 'inline', base: 'none', sm: 'none' }}>
           <WrapItem>
             <Avatar
               size={{ md: 'sm', base: 'xs' }}
@@ -57,6 +60,7 @@ function Header() {
         pl={{ md: '100px', base: '20px' }}
         alignItems="center"
         justifyContent="space-between"
+        direction={{ md: 'row', base: 'column-reverse' }}
       >
         <Flex>
           <Text pr="20px">Home</Text>
