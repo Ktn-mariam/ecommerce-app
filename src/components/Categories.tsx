@@ -34,7 +34,7 @@ const Category: React.FC<CategoryProps> = ({ category }) => {
 function Categories() {
   const { categories } = useContext(ProductListContext)
   return (
-    <Box width="200px">
+    <Box width={{ base: '100px', sm: '150px', md: '200px' }}>
       <Text
         fontSize="20px"
         fontWeight="extrabold"

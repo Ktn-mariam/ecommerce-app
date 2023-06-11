@@ -37,10 +37,10 @@ const FilterRange: React.FC<FilterRangeProps> = ({ setFilter, filter }) => {
           }}
         >
           <RangeSliderTrack bg="red.100">
-            <RangeSliderFilledTrack bg="tomato" />
+            <RangeSliderFilledTrack bg="#F86338" />
           </RangeSliderTrack>
-          <RangeSliderThumb boxSize={3} index={0} />
-          <RangeSliderThumb boxSize={3} index={1} />
+          <RangeSliderThumb boxSize={3} bg="#F86338" index={0} />
+          <RangeSliderThumb boxSize={3} bg="#F86338" index={1} />
         </RangeSlider>
       </Box>
       <Text
